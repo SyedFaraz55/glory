@@ -3,13 +3,14 @@
 
 $connection = new mysqli("localhost","root","","users");
 if($connection->connect_error){
-  die("connection failed");
-}
-$sql = "SELECT title,links FROM news";
-$result = $connection->query($sql);
+  echo "connection failed to database !";
+} else {
+  $sql = "SELECT title,links FROM news";
+  $result = $connection->query($sql);
 
-$sql2 = "SELECT title,link FROM quicklinks";
-$result2 = $connection->query($sql2);
+  $sql2 = "SELECT title,link FROM quicklinks";
+  $result2 = $connection->query($sql2);
+}
 
 ?>
     <section>
